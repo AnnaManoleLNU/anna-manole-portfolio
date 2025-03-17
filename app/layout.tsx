@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SquareArrowOutUpRight } from "lucide-react";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,12 +24,50 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const navLinks = ["projects", "about", "contact"];
+
+  const footerLinks = [
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/anna-manole/",
+    },
+    { name: "GitHub", url: "https://github.com/AnnaManoleLNU" },
+  ];
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+          <header className="row-start-1 flex flex-col items-center justify-center">
+            <nav className="flex gap-4">
+              {navLinks.map((url) => (
+                <Link href={url} key={url} className="hover:text-accent">
+                  {url}
+                </Link>
+              ))}
+            </nav>
+          </header>
+          <main className="row-start-2 sm:items-start">
+            {children}
+          </main>
+          <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+            {footerLinks.map(({ name, url }) => (
+              <a
+                href={url}
+                target="_blank"
+                className="flex gap-2 text-muted-foreground hover:text-primary"
+                key={url}
+              >
+                <small className="text-sm font-medium leading-none">
+                  {name}
+                </small>
+                <SquareArrowOutUpRight size={16} />
+              </a>
+            ))}
+          </footer>
+        </div>
       </body>
     </html>
   );
