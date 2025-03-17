@@ -24,7 +24,9 @@ export default function Home() {
         </nav>
       </div>
       <main className="frow-start-2 lex flex-col items-center sm:items-start">
-        <h1 className="text-5xl font-bold">Anna Manole</h1>
+        <h1 className="text-5xl font-bold text-foreground transition-colors duration-1000 animate-[fadeIn_1s_ease-out_forwards]">
+          Anna Manole
+        </h1>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         {footerLinks.map(({ name, url }) => (

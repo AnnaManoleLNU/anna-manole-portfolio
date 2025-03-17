@@ -121,3 +121,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes fadeIn {
+  from {
+    color: theme('colors.background');
+  }
+  to {
+    color: var(--color-accent);
+  }
+}
+
