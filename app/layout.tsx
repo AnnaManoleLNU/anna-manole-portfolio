@@ -54,7 +54,7 @@ export default function RootLayout({
                   <h1 className="text-2xl font-bold">AM</h1>
                 </Link>
                 {navLinks.map((url) => (
-                  <Link href={url} key={url} className="hover:border-b-2 border-foreground">
+                  <Link href={url} key={url} className="text-muted-foreground hover:text-foreground">
                     {url}
                   </Link>
                 ))}
@@ -70,7 +70,7 @@ export default function RootLayout({
                 <a
                   href={url}
                   target="_blank"
-                  className="flex gap-2 text-muted-foreground hover:text-accent"
+                  className="flex gap-2 text-muted-foreground hover:text-foreground"
                   key={url}
                 >
                   <small className="text-sm font-medium leading-none">
