@@ -29,7 +29,6 @@ const projects = [
       "WebComponents",
       "HTML5",
       "CSS3",
-      "PWA",
     ],
   },
   {
