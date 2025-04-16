@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
@@ -65,7 +66,7 @@ export default function Projects() {
           >
             <Dialog>
               <Card className="flex flex-col h-full min-h-[500px] overflow-hidden shadow-md">
-              <DialogTrigger asChild>
+                <DialogTrigger asChild>
                   <div className="h-48 w-full relative grayscale hover:grayscale-0 cursor-pointer transition-all">
                     <Image
                       src={project.image}
@@ -113,9 +114,10 @@ export default function Projects() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block mt-4 text-blue-600 font-medium hover:underline"
+                      className="inline-block mt-4 font-medium hover:underline"
                     >
-                      Visit Site →
+                      Visit Site 
+                      <ArrowRight className="inline ml-1" size={16} />
                     </Link>
                   )}
                 </div>

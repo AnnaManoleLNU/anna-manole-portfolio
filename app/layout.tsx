@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { SquareArrowOutUpRight } from "lucide-react";
-import Link from "next/link";
 import { ThemeProvider } from "./theme-provider";
 import { ModeToggle } from "./mode-toggle";
+import Navigation from "./navigation";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Anna Manole",
   description: "Anna Manole Portfolio Website",
 };
@@ -26,8 +25,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const navLinks = ["projects"];
-
   const footerLinks = [
     {
       name: "LinkedIn",
@@ -49,16 +46,7 @@ export default function RootLayout({
         >
           <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
             <header className="row-start-1 flex items-center justify-between px-4 py-2">
-              <nav className="flex gap-4 items-center justify-center text-center">
-                {/* <Link href="/" className="flex items-center sm:block">
-                  <h1 className="text-2xl font-bold">AM</h1>
-                </Link> */}
-                {navLinks.map((url) => (
-                  <Link href={url} key={url} className="text-muted-foreground hover:text-foreground">
-                    {url}
-                  </Link>
-                ))}
-              </nav>
+              <Navigation /> {/* Client Component handles navigation */}
               <div>
                 <ModeToggle />
               </div>
