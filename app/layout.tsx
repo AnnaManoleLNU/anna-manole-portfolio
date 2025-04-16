@@ -26,7 +26,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const navLinks = ["projects", "about", "contact"];
+  const navLinks = ["projects"];
 
   const footerLinks = [
     {
@@ -50,9 +50,9 @@ export default function RootLayout({
           <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
             <header className="row-start-1 flex items-center justify-between px-4 py-2">
               <nav className="flex gap-4 items-center justify-center text-center">
-                <Link href="/" className="flex items-center sm:block">
+                {/* <Link href="/" className="flex items-center sm:block">
                   <h1 className="text-2xl font-bold">AM</h1>
-                </Link>
+                </Link> */}
                 {navLinks.map((url) => (
                   <Link href={url} key={url} className="text-muted-foreground hover:text-foreground">
                     {url}
