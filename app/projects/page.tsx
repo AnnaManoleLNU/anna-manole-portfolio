@@ -1,26 +1,27 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
-import allelImage from "../public/projects/allel.png";
 
 const projects = [
   {
     title: "Allel Website",
     description:
       "Designed and developed the allel.se website with a clean layout and custom CMS.",
-    image: allelImage,
+    image: "/allel.png",
+    url: "https://allel.se",
     technologies: ["React", "Tailwind CSS", "Typescript", "Sanity", "Figma"],
   },
   {
     title: "Personal Web Desktop (PWD)",
     description:
       "Single-page desktop-like application featuring a memory game, a real-time chat app using WebSockets, and a recipe browser using an external API.",
-    image: "/projects/pwd.png",
+    image: "/pwd.png",
+    url: "https://personal-web-desktop.vercel.app/",
     technologies: [
       "JavaScript",
       "WebSockets",
@@ -34,7 +35,8 @@ const projects = [
     title: "Global Food Visualization",
     description:
       "Data visualization tool showing global food production trends with interactive graphs.",
-    image: "/projects/global-food.png",
+    image: "/global-food.png",
+    url: "https://food-production-visualization.vercel.app/",
     technologies: [
       "Next.js",
       "D3.js",
@@ -63,7 +65,7 @@ export default function Projects() {
           >
             <Dialog>
               <Card className="flex flex-col h-full min-h-[500px] overflow-hidden shadow-md">
-                <DialogTrigger asChild>
+              <DialogTrigger asChild>
                   <div className="h-48 w-full relative grayscale hover:grayscale-0 cursor-pointer transition-all">
                     <Image
                       src={project.image}
@@ -91,7 +93,7 @@ export default function Projects() {
                 </CardContent>
               </Card>
 
-              <DialogContent className="max-w-3xl">
+              <DialogContent className="max-w-3xl p-14">
                 <div className="relative w-full h-[400px]">
                   <Image
                     src={project.image}
@@ -105,6 +107,17 @@ export default function Projects() {
                   <p className="text-sm text-muted-foreground mt-2">
                     {project.description}
                   </p>
+
+                  {project.url && (
+                    <Link
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-4 text-blue-600 font-medium hover:underline"
+                    >
+                      Visit Site →
+                    </Link>
+                  )}
                 </div>
               </DialogContent>
             </Dialog>
