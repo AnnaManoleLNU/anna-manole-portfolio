@@ -1,16 +1,19 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { motion } from "framer-motion";
+import allelImage from "../public/projects/allel.png";
 
 const projects = [
   {
     title: "Allel Website",
     description:
       "Designed and developed the allel.se website with a clean layout and custom CMS.",
-    image: "/projects/allel.png",
+    image: allelImage,
     technologies: ["React", "Tailwind CSS", "Typescript", "Sanity", "Figma"],
   },
   {
@@ -32,9 +35,15 @@ const projects = [
     description:
       "Data visualization tool showing global food production trends with interactive graphs.",
     image: "/projects/global-food.png",
-    technologies: ["Next.js", "D3.js", "Elastic Search", "MongoDB", "Tailwind CSS"],
+    technologies: [
+      "Next.js",
+      "D3.js",
+      "Elastic Search",
+      "MongoDB",
+      "Tailwind CSS",
+    ],
   },
-]
+];
 
 export default function Projects() {
   return (
@@ -52,32 +61,56 @@ export default function Projects() {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
           >
-            <Card className="flex flex-col h-full min-h-[500px] overflow-hidden shadow-md">
-              <div className="h-48 w-full relative">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col justify-between flex-grow">
-                <p className="mb-4 text-muted-foreground">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.technologies.map((tech, i) => (
-                    <Badge key={i} variant="secondary">
-                      {tech}
-                    </Badge>
-                  ))}
+            <Dialog>
+              <Card className="flex flex-col h-full min-h-[500px] overflow-hidden shadow-md">
+                <DialogTrigger asChild>
+                  <div className="h-48 w-full relative grayscale hover:grayscale-0 cursor-pointer transition-all">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </DialogTrigger>
+
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col justify-between flex-grow">
+                  <p className="mb-4 text-muted-foreground">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.technologies.map((tech, i) => (
+                      <Badge key={i} variant="secondary">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <DialogContent className="max-w-3xl">
+                <div className="relative w-full h-[400px]">
+                  <Image
+                    src={project.image}
+                    alt={`Full preview of ${project.title}`}
+                    fill
+                    className="object-cover rounded-md"
+                  />
                 </div>
-              </CardContent>
-            </Card>
+                <div className="mt-4">
+                  <h2 className="text-xl font-semibold">{project.title}</h2>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    {project.description}
+                  </p>
+                </div>
+              </DialogContent>
+            </Dialog>
           </motion.div>
         ))}
       </div>
     </section>
-  )
+  );
 }
