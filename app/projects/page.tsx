@@ -17,7 +17,6 @@ const projects = [
       "Designed and developed the allel.se website with a clean layout and custom CMS.",
     image: "/allel.png",
     url: "https://allel.se",
-    github: "https://github.com/yourname/allel-website",
     technologies: ["React", "Tailwind CSS", "Typescript", "Sanity", "Figma"],
   },
   {
@@ -26,7 +25,7 @@ const projects = [
       "Single-page desktop-like application featuring a memory game, a real-time chat app using WebSockets, and a recipe browser using an external API.",
     image: "/pwd.png",
     url: "https://personal-web-desktop.vercel.app/",
-    github: "https://github.com/yourname/personal-web-desktop",
+    github: "https://github.com/AnnaManoleLNU/food-production-visualization-original",
     technologies: [
       "JavaScript",
       "WebSockets",
