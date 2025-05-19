@@ -44,26 +44,30 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <header className="row-start-1 flex items-center justify-between  py-2">
+          {/* Use flex-col container for vertical layout */}
+          <div className="flex flex-col min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+            <header className="flex items-center justify-between py-2">
               <Navigation /> {/* Client Component handles navigation */}
               <div>
                 <ModeToggle />
               </div>
             </header>
 
-            <main className="row-start-2 sm:items-start">{children}</main>
-            <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+            {/* Main takes all remaining space, center content vertically and horizontally */}
+            <main className="flex-grow flex justify-center items-center w-full">
+              {children}
+            </main>
+
+            <footer className="flex gap-[24px] flex-wrap items-center justify-center">
               {footerLinks.map(({ name, url }) => (
                 <a
                   href={url}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex gap-2 text-muted-foreground hover:text-foreground"
                   key={url}
                 >
-                  <small className="text-sm font-medium leading-none">
-                    {name}
-                  </small>
+                  <small className="text-sm font-medium leading-none">{name}</small>
                   <SquareArrowOutUpRight size={16} />
                 </a>
               ))}
