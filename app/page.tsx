@@ -4,10 +4,10 @@ export default function Home() {
       <h1 className="text-4xl sm:text-6xl lg:text-6xl font-cormorant">
         Hello!
       </h1>
-      <h1 className="text-4xl sm:text-6xl lg:text-6xl font-cormorant">
-        I’m Anna Manole
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-cormorant">
+        I’m Anna Manole.
       </h1>
-      <p className="text-lg md:text-xl font-sans uppercase font-extralight tracking-wide">
+      <p className="text-sm md:text-xl font-sans uppercase font-extralight tracking-wide">
         Frontend Developer & Graphic Designer
       </p>
     </section>

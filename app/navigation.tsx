@@ -1,30 +1,36 @@
-"use client"; 
+"use client";
+
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft} from "lucide-react";
+import clsx from "clsx";
 
 export default function Navigation() {
   const pathname = usePathname();
 
-  const isProjectsPage = pathname === "/projects";
-
-  const navLink = isProjectsPage ? (
-    <Link href="/" className="text-muted-foreground hover:text-foreground">
-      <ArrowLeft size={24} />
-     
-    </Link>
-  ) : (
-    <Link
-      href="/projects"
-      className="text-muted-foreground hover:text-foreground"
-    >
-      Projects
-    </Link>
-  );
+  const links = [
+    { label: "Home", href: "/" },
+    { label: "Programming", href: "/projects" },
+    { label: "Graphic Design", href: "/design" },
+    { label: "About Me", href: "/about" },
+  ];
 
   return (
-    <nav className="flex gap-4 items-center justify-center text-center">
-      {navLink}
+    <nav className="flex flex-wrap gap-3 sm:gap-6 justify-center items-center text-center">
+      {links.map(({ label, href }) => (
+        <Link
+          key={href}
+          href={href}
+          className={clsx(
+            "uppercase font-sans tracking-wide transition-colors duration-300",
+            "text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl",
+            pathname === href
+              ? "text-foreground font-medium"
+              : "text-muted-foreground hover:text-foreground"
+          )}
+        >
+          {label}
+        </Link>
+      ))}
     </nav>
   );
 }

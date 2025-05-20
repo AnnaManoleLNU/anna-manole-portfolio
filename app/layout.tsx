@@ -51,16 +51,21 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* Use flex-col container for vertical layout */}
           <div className="flex flex-col min-h-screen p-8 pb-20 gap-16 sm:p-20">
-            <header className="flex items-center justify-between py-2">
-              <Navigation /> {/* Client Component handles navigation */}
-              <div>
-                <ModeToggle />
-              </div>
-            </header>
+            <header className="w-full py-2">
+  <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+    {/* You can add a logo or name here if needed */}
+    <div className="hidden sm:flex-1 sm:block" />
 
-            {/* Main takes all remaining space, center content vertically and horizontally */}
+    {/* Nav + Theme toggle stack on small screens, inline on sm+ */}
+    <div className="flex flex-col sm:flex-row items-center justify-end gap-4 w-full sm:w-auto">
+      <Navigation />
+      <ModeToggle />
+    </div>
+  </div>
+</header>
+
+
             <main className="flex-grow flex justify-center items-center w-full">
               {children}
             </main>
