@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
-        mono: ['var(--font-geist-mono)'],
+        mono: ['var(--font-cormorant)'],
         cormorant: ['var(--font-cormorant)'],
       },
     },
