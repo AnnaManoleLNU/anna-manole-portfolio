@@ -15,10 +15,7 @@ export default function Home() {
         {/* Right block: About Me */}
         <div className="flex-[1.75] text-base sm:text-lg text-muted-foreground leading-relaxed italic">
           <p>
-            I specialize in creating clean, accessible, and visually engaging
-            digital experiences. My background in graphic design gives me an eye
-            for layout and detail, while my frontend expertise ensures
-            responsive, performant, and user-centered web interfaces.
+            I love making websites and thinking about my users. My background in graphic design gives me an eye for layout and detail, while my frontend expertise ensures responsive, performant, and user-centered web interfaces.
           </p>
         </div>
       </div>
