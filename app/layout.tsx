@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Cormorant_Garamond } from "next/font/google";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { ThemeProvider } from "./theme-provider";
 import { ModeToggle } from "./mode-toggle";
@@ -13,6 +13,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -36,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -45,7 +52,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* Use flex-col container for vertical layout */}
-          <div className="flex flex-col min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+          <div className="flex flex-col min-h-screen p-8 pb-20 gap-16 sm:p-20">
             <header className="flex items-center justify-between py-2">
               <Navigation /> {/* Client Component handles navigation */}
               <div>
@@ -67,7 +74,9 @@ export default function RootLayout({
                   className="flex gap-2 text-muted-foreground hover:text-foreground"
                   key={url}
                 >
-                  <small className="text-sm font-medium leading-none">{name}</small>
+                  <small className="text-sm font-medium leading-none">
+                    {name}
+                  </small>
                   <SquareArrowOutUpRight size={16} />
                 </a>
               ))}
