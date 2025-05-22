@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +17,7 @@ import { useMediaQuery } from "@/lib/hooks/use-media-query";
 
 const projects = [
   {
-    title: "Allel Website",
+    title: "Allel Electrical Consultancy",
     description:
       "Designed and developed the allel.se website with a clean layout and custom CMS.",
     image: "/allel.png",
@@ -20,7 +25,7 @@ const projects = [
     technologies: ["React", "Tailwind CSS", "Typescript", "Sanity", "Figma"],
   },
   {
-    title: "Personal Web Desktop (PWD)",
+    title: "Personal Web Desktop",
     description:
       "Single-page desktop-like application featuring a memory game, a real-time chat app using WebSockets, and a recipe browser using an external API.",
     image: "/pwd.png",
@@ -57,29 +62,39 @@ export default function Projects() {
 
   return (
     <section className="container mx-auto py-12 px-4">
-      <h1 className="text-4xl font-extrabold font-cormorant tracking-tight lg:text-6xl mb-8">
-        Projects
+      <h1 className="text-4xl font-extrabold font-cormorant tracking-tight lg:text-6xl mb-2">
+        Programming Projects
       </h1>
 
       <p className="text-lg text-muted-foreground mb-4">
-        Here are some of my recent projects that showcase my skills in web development and programming.
+        Here are some of my recent projects that showcase my skills in web
+        development and programming.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => {
           const TriggerCard = (
             <Card className="flex flex-col h-full min-h-[500px] overflow-hidden shadow-md">
-              <div className="h-48 w-full relative grayscale hover:grayscale-0 cursor-pointer transition-all">
+              <div className="relative h-48 w-full overflow-hidden  group">
+                {/* Background Image */}
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-all duration-500 ease-in-out group-hover:blur-0 blur-sm scale-105"
                 />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/50 z-10 transition-all duration-500 group-hover:bg-black/20" />
+
+                {/* Title */}
+                <h2 className="absolute inset-0 flex items-center justify-center text-white text-2xl md:text-3xl lg:text-4xl font-bold z-20 text-center px-4">
+                  {project.title}
+                </h2>
               </div>
 
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="font-cormorant text-2xl"></CardTitle>
               </CardHeader>
 
               <CardContent className="flex flex-col justify-between flex-grow">
@@ -162,9 +177,9 @@ export default function Projects() {
                 <Dialog>
                   <DialogTrigger asChild>{TriggerCard}</DialogTrigger>
                   <DialogContent className="w-full max-w-[90vw] lg:max-w-[1200px] p-8">
-                  <DialogTitle className="text-3xl font-semibold font-cormorant">
-                    {project.title}
-                  </DialogTitle>
+                    <DialogTitle className="text-3xl font-semibold font-cormorant">
+                      {project.title}
+                    </DialogTitle>
                     {DetailsContent}
                   </DialogContent>
                 </Dialog>
