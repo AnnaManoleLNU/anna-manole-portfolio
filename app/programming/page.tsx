@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -25,7 +25,8 @@ const projects = [
       "Single-page desktop-like application featuring a memory game, a real-time chat app using WebSockets, and a recipe browser using an external API.",
     image: "/pwd.png",
     url: "https://personal-web-desktop.vercel.app/",
-    github: "https://github.com/AnnaManoleLNU/food-production-visualization-original",
+    github:
+      "https://github.com/AnnaManoleLNU/food-production-visualization-original",
     technologies: [
       "JavaScript",
       "WebSockets",
@@ -56,9 +57,13 @@ export default function Projects() {
 
   return (
     <section className="container mx-auto py-12 px-4">
-      <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-8">
+      <h1 className="text-4xl font-extrabold font-cormorant tracking-tight lg:text-6xl mb-8">
         Projects
       </h1>
+
+      <p className="text-lg text-muted-foreground mb-4">
+        Here are some of my recent projects that showcase my skills in web development and programming.
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => {
@@ -104,37 +109,35 @@ export default function Projects() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-semibold">{project.title}</h2>
+                {/* <h2 className="text-2xl font-semibold">{project.title}</h2> */}
                 <p className="text-muted-foreground mt-2 text-sm">
                   {project.description}
                 </p>
 
                 <div className="flex gap-3 mt-6 flex-wrap">
-  {project.url && (
-    <Link
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-lg border border-input bg-background px-4 py-2 text-sm font-semibold shadow-sm transition hover:bg-accent hover:text-accent-foreground"
-    >
-      <Globe size={16} />
-      Visit Site
-    </Link>
-  )}
-  {project.github && (
-    <Link
-      href={project.github}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-lg border border-input bg-background px-4 py-2 text-sm font-semibold shadow-sm transition hover:bg-accent hover:text-accent-foreground"
-    >
-      <Github size={16} />
-      GitHub
-    </Link>
-  )}
-</div>
-
-
+                  {project.url && (
+                    <Link
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg border border-input bg-background px-4 py-2 text-sm font-semibold shadow-sm transition hover:bg-accent hover:text-accent-foreground"
+                    >
+                      <Globe size={16} />
+                      Visit Site
+                    </Link>
+                  )}
+                  {project.github && (
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg border border-input bg-background px-4 py-2 text-sm font-semibold shadow-sm transition hover:bg-accent hover:text-accent-foreground"
+                    >
+                      <Github size={16} />
+                      GitHub
+                    </Link>
+                  )}
+                </div>
 
                 <div className="flex flex-wrap gap-2 mt-6">
                   {project.technologies.map((tech, i) => (
@@ -159,6 +162,9 @@ export default function Projects() {
                 <Dialog>
                   <DialogTrigger asChild>{TriggerCard}</DialogTrigger>
                   <DialogContent className="w-full max-w-[90vw] lg:max-w-[1200px] p-8">
+                  <DialogTitle className="text-3xl font-semibold font-cormorant">
+                    {project.title}
+                  </DialogTitle>
                     {DetailsContent}
                   </DialogContent>
                 </Dialog>
