@@ -5,9 +5,8 @@ export default function GraphicDesign() {
         Graphic Design Projects
       </h1>
       <p className="text-lg text-muted-foreground mb-4">
-        Here are some of my graphic design projects showcasing my skills in layout, typograhy, visual storytelling, and retouching.
+        Here are some of my graphic design projects showcasing my skills in layout, typograhy, visual storytelling, and retouching. 
       </p>
-      
     </section>
   );
 }
