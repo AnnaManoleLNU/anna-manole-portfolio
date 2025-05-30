@@ -15,10 +15,6 @@ export default function Pwd() {
         Personal Web Desktop Application
       </h1>
 
-      <p className="text-lg text-muted-foreground mb-4">
-        A single-page desktop-like application featuring a memory game, a real-time chat app using WebSockets, and a recipe browser powered by an external API.
-      </p>
-
       <div className="flex flex-wrap gap-2 mb-6">
         {technologies.map((tech, i) => (
           <Badge key={i} variant="outline">
@@ -28,11 +24,11 @@ export default function Pwd() {
       </div>
 
       <div className="mt-12 space-y-12 text-base leading-relaxed text-muted-foreground">
-        <div className="flex flex-col md:flex-row gap-14 items-center">
+        <div className="flex flex-col lg:flex-col xl:flex-row gap-14 items-center">
           <div className="flex-1">
             <h2 className="text-2xl font-bold mb-4">Main Application</h2>
             <p>
-              The Personal Web Desktop application mimics a desktop environment within a browser. It features a dock where users can launch different sub-applications and manage them just like in a traditional operating system. Multiple instances of the same or different sub-applications can be opened and freely dragged around the interface. The focused sub-application always appears in front of others, ensuring smooth multitasking. Additionally, sub-applications can be minimized to the dock for a cleaner workspace.
+              The Personal Web Desktop application mimics a desktop environment within a browser. It features a dock where users can launch different sub-applications and manage them just like in a traditional operating system. Multiple instances of the same or different sub-applications can be opened and freely dragged around the interface. The focused sub-application always appears in front of others, ensuring smooth multitasking.
             </p>
           </div>
           <Image
