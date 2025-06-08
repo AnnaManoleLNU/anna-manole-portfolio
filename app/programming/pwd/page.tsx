@@ -10,7 +10,7 @@ export default function Pwd() {
     "CSS3",
   ];
   return (
-    <section className="container mx-auto py-12 px-4 text-justify">
+    <section className="container mx-auto py-12 px-4 ">
       <h1 className="text-4xl font-extrabold font-cormorant tracking-tight lg:text-6xl mb-2">
         Personal Web Desktop Application
       </h1>
@@ -23,7 +23,7 @@ export default function Pwd() {
         ))}
       </div>
 
-      <div className="mt-12 space-y-12 text-base leading-relaxed ">
+      <div className="mt-12 space-y-12 text-base leading-relaxed text-justify">
         <div className="flex flex-col lg:flex-col xl:flex-row gap-14 items-center">
           <div className="flex-1">
             <h2 className="text-2xl font-bold mb-4">Main Application</h2>

@@ -11,7 +11,7 @@ export default function ProjectPage() {
   ];
 
   return (
-    <section className="container mx-auto py-12 px-4 text-justify">
+    <section className="container mx-auto py-12 px-4 ">
       <h1 className="text-4xl font-extrabold font-cormorant tracking-tight lg:text-6xl mb-2">
         Allel Electrical Consultancy Website
       </h1>
@@ -24,7 +24,7 @@ export default function ProjectPage() {
         ))}
       </div>
 
-      <div className="mt-12 space-y-12 gap-4 text-base leading-relaxed ">
+      <div className="mt-12 space-y-12 gap-4 text-base leading-relaxed text-justify">
         {/* Requirements */}
         <div className="grid md:grid-cols-2 gap-14 items-stretch">
           {/* Left column: combined text sections */}
