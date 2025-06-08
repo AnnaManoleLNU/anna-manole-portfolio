@@ -24,14 +24,14 @@ export default function ProjectPage() {
         ))}
       </div>
 
-      <div className="mt-12 space-y-12 gap-4 text-base leading-relaxed text-muted-foreground">
+      <div className="mt-12 space-y-12 gap-4 text-base leading-relaxed ">
         {/* Requirements */}
         <div className="grid md:grid-cols-2 gap-14 items-stretch">
           {/* Left column: combined text sections */}
           <div className="flex flex-col justify-between space-y-8 h-full">
             <div>
               <h2 className="text-2xl font-bold mb-4">Project Vision</h2>
-              <p>
+              <p className="text-muted-foreground">
                 The electrical consultant firm Allel Elektrokonsult AB has hired
                 me to deliver a website that would represent them in a suitable
                 manner. The firm was grounded in 1968 and has its office in
@@ -51,7 +51,7 @@ export default function ProjectPage() {
             </div>
             <div>
               <h2 className="text-2xl font-bold mb-4">Target Groups</h2>
-              <p>
+              <p className="text-muted-foreground">
                 Previous clients that Allel had include municipal housing
                 companies such as Stockholmshem, Svenska Bostäder and Sollentuna
                 kommun. They would like to attract more private electricians as
@@ -70,38 +70,34 @@ export default function ProjectPage() {
                 Basic Requirements & Unique Selling Points
               </h2>
               <ol className="list-decimal list-inside space-y-2">
-                <li>
-                  <strong>Uniform design:</strong> Allel would like a uniform
+                <li className="text-muted-foreground">
+                  <strong className="text-foreground">Uniform design:</strong> Allel would like a uniform
                   website design that signals professionalism and represents
                   their company values. They would like to be able to showcase
                   their work to previous, current and future customers.
                 </li>
-                <li>
-                  <strong>Search engine optimization (SEO):</strong> They want
+                <li className="text-muted-foreground">
+                  <strong className="text-foreground">Search engine optimization (SEO):</strong> They want
                   to appear on the front page in search results for electrical
                   consultants in the Stockholm area.
                 </li>
-                <li>
-                  <strong>Cost calculator:</strong> Potential customers should
+                <li className="text-muted-foreground">
+                  <strong className="text-foreground">Cost calculator:</strong> Potential customers should
                   be able to calculate preliminary costs of services. This is a
                   unique selling point (USP), as no other similar establishment
                   currently offers this.
                 </li>
-                <li>
-                  <strong>Internal system:</strong> Allel would like an internal
+                <li className="text-muted-foreground">
+                  <strong className="text-foreground">Internal system:</strong> Allel would like an internal
                   system attached to the website for updating and managing
                   projects. This includes hosting high-resolution images and
                   sketches without impacting performance.
                 </li>
               </ol>
-              <p className="mt-4">
-                All of these requirements aim to save time and resources while
-                attracting new customers and retaining current ones.
-              </p>
             </div>
             <div>
               <h2 className="text-2xl font-bold mb-4">JAMstack</h2>
-              <p>
+              <p className="text-muted-foreground">
                 The application uses the JAM architecture. JAM stands for
                 JavaScript, APIs and Markup. It removes the web experience layer
                 from data and business logic, where 3rd party services are
@@ -113,7 +109,7 @@ export default function ProjectPage() {
               </p>
 
               <h3 className="text-xl font-semibold mt-4">Next.js</h3>
-              <p>
+              <p className="text-muted-foreground">
                 Next.js was chosen because of the SEO it provides through
                 server-side rendering (SSR). When the pages are rendered on the
                 server, all content is included in the HTML code sent to the
@@ -124,7 +120,7 @@ export default function ProjectPage() {
               </p>
 
               <h3 className="text-xl font-semibold mt-4">Tailwind CSS</h3>
-              <p>
+              <p className="text-muted-foreground">
                 Tailwind CSS was used to build a responsive, visually appealing
                 and consistent webpage. Tailwind CSS has both predesigned
                 classes to style CSS, as well as the ability to change the
@@ -134,7 +130,7 @@ export default function ProjectPage() {
               </p>
 
               <h3 className="text-xl font-semibold mt-4">Sanity</h3>
-              <p>
+              <p className="text-muted-foreground">
                 Sanity uses an editing environment called Sanity Studio, that
                 uses a custom schema with JavaScript. JavaScript is also used to
                 add field validations, organize documents and set initial
@@ -145,7 +141,7 @@ export default function ProjectPage() {
               </p>
 
               <h3 className="text-xl font-semibold mt-4">DigitalOcean</h3>
-              <p>
+              <p className="text-muted-foreground">
                 DigitalOcean was used to host both the main website and the CMS.
                 It provides developer-friendly features like firewalls, SSH
                 keys, and 2FA, while offering scalable infrastructure and access
