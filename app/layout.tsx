@@ -42,7 +42,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen p-8 pb-4">
+          <div className="flex flex-col min-h-screen p-2 mt-8 md:mt-0 md:p-8">
             <Navigation />
 
             <main className="flex flex-col flex-1 font-sans ">
