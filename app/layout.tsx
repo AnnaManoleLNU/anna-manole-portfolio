@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono, Cormorant_Garamond } from "next/font/google";
-import { SquareArrowOutUpRight } from "lucide-react";
 import { ThemeProvider } from "./theme-provider";
-import { ModeToggle } from "./mode-toggle";
+
 import Navigation from "./navigation";
 import "./globals.css";
 
@@ -32,14 +31,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const footerLinks = [
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/anna-manole/",
-    },
-    { name: "GitHub", url: "https://github.com/AnnaManoleLNU" },
-  ];
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -51,39 +42,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen p-8 pb-20 gap-16 sm:p-20">
-            <header className="w-full py-2">
-              <div className="flex flex-row justify-between items-center gap-4 w-full">
-                {/* Optional logo or name slot */}
-                <div className="hidden sm:flex-1 sm:block" />
+          <div className="flex flex-col min-h-screen p-8 pb-4">
+            <Navigation />
 
-                {/* Nav + Theme toggle always aligned right */}
-                <div className="flex items-center justify-end gap-4 w-full sm:w-auto">
-                  <Navigation />
-                  <ModeToggle />
-                </div>
-              </div>
-            </header>
-
-            <main className="flex-grow flex justify-center items-center w-full">
+            <main className="flex flex-col flex-1 justify-center items-center ">
               {children}
             </main>
 
-            <footer className="flex gap-[24px] flex-wrap items-center justify-center">
-              {footerLinks.map(({ name, url }) => (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex gap-2 text-muted-foreground hover:text-foreground"
-                  key={url}
-                >
-                  <small className="text-sm font-medium leading-none">
-                    {name}
-                  </small>
-                  <SquareArrowOutUpRight size={16} />
-                </a>
-              ))}
+            <footer>
+              <p className="text-sm text-muted-foreground text-center w-full p-4">
+                © {new Date().getFullYear()} Anna Manole. All rights reserved.
+              </p>
             </footer>
           </div>
         </ThemeProvider>

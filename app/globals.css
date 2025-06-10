@@ -56,7 +56,6 @@
   --primary: oklch(0.5 0.12 120); /* Olive green tone */
   --primary-foreground: oklch(0.985 0 0);
 
-
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -116,7 +115,6 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -124,14 +122,44 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .carousel {
+    max-width: 800px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    > * {
+      flex: 0 0 auto; /* Prevent children from shrinking or growing */
+    }
+  }
+
+  .carsousel-inner {
+    display: flex;
+    gap: 20px;
+    /* Add padding to the right to create a gap between the last and first card. */
+    padding-right: 20px;
+    will-change: transform; 
+    animation: scrolling 20s linear infinite;
+  }
+  .card {
+    width: 100%;
+  }
 }
 
 @keyframes fadeIn {
   from {
-    color: theme('colors.background');
+    color: theme("colors.background");
   }
   to {
     color: var(--color-foreground);
   }
 }
 
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

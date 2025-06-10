@@ -4,9 +4,8 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="container mx-auto py-12 px-4">
-      <div className="flex flex-col lg:flex-row gap-4 lg:gap-32 mb-8 items-center">
-        
+    <section className="py-12 px-4">
+      <div className="flex flex-col  lg:flex-row gap-4 lg:gap-32 mb-8 items-center">
         {/* Text Block with Animation */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -27,8 +26,8 @@ export default function About() {
           </p>
           <p className="text-base md:text-lg text-muted-foreground mb-4">
             Later on, I started learning how to code and quickly fell in love
-            with all the possibilities that it would bring. I used to dream about
-            spending all day at the computer, and now I get to do it for a
+            with all the possibilities that it would bring. I used to dream
+            about spending all day at the computer, and now I get to do it for a
             living.
           </p>
 
@@ -69,7 +68,7 @@ export default function About() {
             alt="Anna Manole"
             width={500}
             height={500}
-            className="rounded-2xl object-cover"
+            className="object-cover"
           />
         </motion.div>
       </div>
