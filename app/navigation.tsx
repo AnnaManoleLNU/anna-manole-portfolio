@@ -34,7 +34,7 @@ export default function Navigation() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-sm text-foreground hover:text-muted-foreground transition-colors duration-200"
+                    className="flex items-center gap-1 text-md text-foreground hover:text-muted-foreground transition-colors duration-200"
                   >
                     {item.label}
                     <SquareArrowOutUpRight size={16} />
@@ -43,7 +43,7 @@ export default function Navigation() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="text-sm text-foreground hover:text-muted-foreground transition-colors duration-200"
+                    className="text-md text-foreground hover:text-muted-foreground transition-colors duration-200"
                   >
                     {item.label}
                   </Link>
