@@ -1,27 +1,22 @@
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import { projects } from "@/lib/utils";
 
 export default function ProjectPage() {
-  const technologies = [
-    "Next.js",
-    "Tailwind CSS",
-    "Sanity",
-    "DigitalOcean",
-    "JavaScript",
-  ];
-
   return (
-    <section className="container mx-auto py-12 px-4 ">
-      <h1 className="text-4xl font-extrabold font-cormorant tracking-tight lg:text-6xl mb-2">
+    <section className="container mx-auto py-12">
+      <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-2">
         Allel Electrical Consultancy Website
       </h1>
 
       <div className="flex flex-wrap gap-2 mb-6">
-        {technologies.map((tech, i) => (
-          <Badge key={i} variant="outline">
-            {tech}
-          </Badge>
-        ))}
+        {projects
+          .find((project) => project.link === "/allel")
+          ?.technologies.map((tech, i) => (
+            <Badge key={i} variant="outline">
+              {tech}
+            </Badge>
+          ))}
       </div>
 
       <div className="mt-12 space-y-12 gap-4 text-base leading-relaxed text-justify">
@@ -71,27 +66,31 @@ export default function ProjectPage() {
               </h2>
               <ol className="list-decimal list-inside space-y-2">
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">Uniform design:</strong> Allel would like a uniform
-                  website design that signals professionalism and represents
-                  their company values. They would like to be able to showcase
-                  their work to previous, current and future customers.
+                  <strong className="text-foreground">Uniform design:</strong>{" "}
+                  Allel would like a uniform website design that signals
+                  professionalism and represents their company values. They
+                  would like to be able to showcase their work to previous,
+                  current and future customers.
                 </li>
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">Search engine optimization (SEO):</strong> They want
-                  to appear on the front page in search results for electrical
-                  consultants in the Stockholm area.
+                  <strong className="text-foreground">
+                    Search engine optimization (SEO):
+                  </strong>{" "}
+                  They want to appear on the front page in search results for
+                  electrical consultants in the Stockholm area.
                 </li>
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">Cost calculator:</strong> Potential customers should
-                  be able to calculate preliminary costs of services. This is a
-                  unique selling point (USP), as no other similar establishment
-                  currently offers this.
+                  <strong className="text-foreground">Cost calculator:</strong>{" "}
+                  Potential customers should be able to calculate preliminary
+                  costs of services. This is a unique selling point (USP), as no
+                  other similar establishment currently offers this.
                 </li>
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">Internal system:</strong> Allel would like an internal
-                  system attached to the website for updating and managing
-                  projects. This includes hosting high-resolution images and
-                  sketches without impacting performance.
+                  <strong className="text-foreground">Internal system:</strong>{" "}
+                  Allel would like an internal system attached to the website
+                  for updating and managing projects. This includes hosting
+                  high-resolution images and sketches without impacting
+                  performance.
                 </li>
               </ol>
             </div>
@@ -158,7 +157,7 @@ export default function ProjectPage() {
                 alt="Allel graphic profile"
                 width={800}
                 height={1200}
-                className="rounded-lg shadow-md object-cover h-full"
+                className="object-cover h-full border border-foreground"
               />
               <figcaption className="mt-2 text-center text-sm text-gray-600 italic">
                 Graphic profile for Allel Elektrokonsult AB
