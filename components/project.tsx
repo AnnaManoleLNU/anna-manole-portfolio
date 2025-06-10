@@ -53,15 +53,15 @@ export default function Project() {
               </div>
               <div className="flex flex-col flex-1 md:ml-48">
                 <p className="text-sm">{project.description}</p>
-                <div className="group font-semibold mt-2 flex items-center">
-      <a
-        href={project.link}
-        className="text-muted-foreground"
-      >
-        View Project
-      </a>
-      <ArrowRight className="inline ml-1 h-4 w-4 text-muted-foreground transition-transform duration-200 group-hover:translate-x-1" />
-    </div>
+                <div
+  className={`group font-semibold mt-2 flex items-center ${
+    project.type === "Programming" ? "text-blue-500 hover:text-blue-600" : "text-green-500 hover:text-green-600"
+  }`}
+>
+  <a href={project.link}>View Project</a>
+  <ArrowRight className="inline ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+</div>
+
               </div>
             </div>
           </div>
