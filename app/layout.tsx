@@ -45,12 +45,12 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen p-8 pb-4">
             <Navigation />
 
-            <main className="flex flex-col flex-1 justify-center items-center ">
+            <main className="flex flex-col flex-1 font-sans ">
               {children}
             </main>
 
             <footer>
-              <p className="text-sm text-muted-foreground text-center w-full p-4">
+              <p className="text-sm text-muted-foreground text-center w-full p-4 font-sans">
                 © {new Date().getFullYear()} Anna Manole. All rights reserved.
               </p>
             </footer>

@@ -10,8 +10,8 @@ export default function Pwd() {
     "CSS3",
   ];
   return (
-    <section className="container mx-auto py-12 px-4 ">
-      <h1 className="text-4xl font-extrabold font-cormorant tracking-tight lg:text-6xl mb-2">
+    <section className="container mx-auto py-12 ">
+      <h1 className="text-4xl font-extrabold  tracking-tight lg:text-6xl mb-2">
         Personal Web Desktop Application
       </h1>
 
@@ -36,7 +36,7 @@ export default function Pwd() {
             alt="Personal Web Desktop Screenshot"
             width={800}
             height={1200}
-            className="rounded-lg shadow-md object-cover h-full"
+            className="object-cover h-full border border-foreground"
           />
         </div>
 
@@ -49,7 +49,7 @@ export default function Pwd() {
               alt="Memory Game Screenshot"
               width={400}
               height={600}
-              className="rounded-lg shadow-md object-cover"
+              className="object-cover  border border-foreground"
             />
             <h2 className="text-xl font-bold mt-4">Memory Sub-App</h2>
             <p className="text-muted-foreground">
@@ -64,7 +64,7 @@ export default function Pwd() {
               alt="Chat App Screenshot"
               width={400}
               height={600}
-              className="rounded-lg shadow-md object-cover"
+              className="object-cover  border border-foreground"
             />
             <h2 className="text-xl font-bold mt-4">Chat Sub-App</h2>
             <p className="text-muted-foreground">
@@ -79,7 +79,7 @@ export default function Pwd() {
               alt="Recipe Browser Screenshot"
               width={400}
               height={600}
-              className="rounded-lg shadow-md object-cover"
+              className="object-cover border border-foreground"
             />
             <h2 className="text-xl font-bold mt-4">Recipe Browser Sub-App</h2>
             <p className="text-muted-foreground">

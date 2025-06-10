@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Project() {
   return (
-    <section className="flex flex-col border-b border-foreground font-sans w-full py-12">
+    <section className="flex flex-col border-b border-foreground w-full py-12">
       <div className="flex flex-col gap-20">
         {projects.map((project) => (
           <div key={project.title} className="flex flex-col gap-4">

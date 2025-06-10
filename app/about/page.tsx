@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="py-12 px-4">
-      <div className="flex flex-col  lg:flex-row gap-4 lg:gap-32 mb-8 items-center">
+    <section className="py-12 md:px-4 flex flex-1">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-32 mb-8 items-center">
         {/* Text Block with Animation */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -13,11 +13,11 @@ export default function About() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-left w-full"
         >
-          <h1 className="text-4xl font-extrabold font-cormorant tracking-tight lg:text-6xl mb-6">
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-6">
             Hi, I&apos;m Anna
           </h1>
-          <p className="text-base md:text-lg text-muted-foreground mb-4">
-            Since I was small, I’ve been interested in computers. Growing up in
+          <p className="text-base md:text-lg text-muted-foreground  mb-4">
+            Since I was a kid, I’ve been interested in computers. Growing up in
             Romania, I started playing video games on an old Nintendo console at
             the age of 7, often competing against my friends or parents. When I
             was 13, I got my first computer and began experimenting with
@@ -32,7 +32,7 @@ export default function About() {
           </p>
 
           <div className="text-base md:text-lg text-muted-foreground mb-4">
-            <h2 className="font-cormorant text-2xl font-semibold text-foreground mb-2">
+            <h2 className=" text-2xl font-semibold text-foreground mb-2">
               Education
             </h2>
             <ul className="space-y-3">
