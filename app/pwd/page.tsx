@@ -1,6 +1,9 @@
+"use client";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { projects } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function Pwd() {
   return (
@@ -18,6 +21,31 @@ export default function Pwd() {
             </Badge>
           ))}
       </div>
+
+      <Button
+        variant="outline"
+        className=" mr-2 bg-pink-200  hover:bg-pink-300 transition-colors"
+        onClick={() =>
+          window.open("https://personal-web-desktop.vercel.app/", "_blank")
+        }
+      >
+        <span>Visit Website</span>
+        <SquareArrowOutUpRight size={16} />
+      </Button>
+
+      <Button
+        variant="outline"
+        className=" bg-foreground text-background hover:bg-foreground/80 hover:text-background transition-colors"
+        onClick={() =>
+          window.open(
+            "https://github.com/AnnaManoleLNU/PWD---personal-web-desktop/",
+            "_blank"
+          )
+        }
+      >
+        <span>GitHub Repository</span>
+        <SquareArrowOutUpRight size={16} />
+      </Button>
 
       <div className="mt-12 space-y-12 text-base leading-relaxed text-justify">
         <div className="flex flex-col lg:flex-col xl:flex-row gap-14 items-center">

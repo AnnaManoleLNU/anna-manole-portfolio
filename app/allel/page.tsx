@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function ProjectPage() {
   return (
@@ -18,6 +21,15 @@ export default function ProjectPage() {
             </Badge>
           ))}
       </div>
+
+      <Button
+        variant="outline"
+        className=" mr-2 bg-red-600  hover:bg-red-700 text-white hover:text-white transition-colors"
+        onClick={() => window.open("https:allel.se/", "_blank")}
+      >
+        <span>Visit Website</span>
+        <SquareArrowOutUpRight size={16} />
+      </Button>
 
       <div className="mt-12 space-y-12 gap-4 text-base leading-relaxed text-justify">
         {/* Requirements */}
