@@ -1,6 +1,7 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/lib/utils";
+import { ArrowLeftRightIcon } from "lucide-react";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
@@ -72,6 +73,11 @@ export default function Retouching() {
                 />
               }
               position={50}
+              handle={
+                <span className="react-compare-slider-handle">
+                  <ArrowLeftRightIcon className="h-14 w-14 text-muted p-2 rounded-4xl bg-muted/20 border-muted border-2 cursor-e-resize" />
+                </span>
+              }
             />
           
         </div>
