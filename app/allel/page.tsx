@@ -25,7 +25,10 @@ export default function ProjectPage() {
       <Button
         variant="outline"
         className=" mr-2 bg-red-600  hover:bg-red-700 text-white hover:text-white transition-colors"
-        onClick={() => window.open("https:allel.se/", "_blank")}
+        // visit allel website
+        onClick={()  =>
+          window.open("https://allel.se/", "_blank")
+        }
       >
         <span>Visit Website</span>
         <SquareArrowOutUpRight size={16} />
