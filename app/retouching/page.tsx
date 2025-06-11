@@ -59,15 +59,15 @@ export default function Retouching() {
             <ReactCompareSlider
               itemOne={
                 <ReactCompareSliderImage
-                  src="/retouching-1.png"
-                  srcSet="/retouching-1.png"
+                  src="/retouching-1.jpg"
+                  srcSet="/retouching-1.jpg"
                   alt="Before Retouching"
                 />
               }
               itemTwo={
                 <ReactCompareSliderImage
-                  src="/retouching-1-before.png"
-                  srcSet="/retouching-1-before.png"
+                  src="/retouching-1-before.jpg"
+                  srcSet="/retouching-1-before.jpg"
                   alt="After Retouching"
                 />
               }
