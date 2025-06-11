@@ -31,4 +31,17 @@ export const projects = [
     description: "For this web application I worked together with my client, an electrical consulatancy, to create a new graphic profile, which included a rebranding through logotype. I have also given them the possibility to manage their own content through a CMS.",
     link: "/allel",
   },
+  {
+    title: "Selected Retouching Projects",
+    type: "Design",
+    images: [
+      "/retouching-1.png",
+      "/retouching-2.png",
+      "/retouching-3.png",
+      "/retouching-4.png",
+    ],
+    technologies: ["Photoshop", "Lightroom", "Canva"],
+    description: "I have worked with different retouching projects, where I have used Photoshop, Lightroom and Canva to create visually appealing images. These projects include retouching portraits, product photography and nature photography.",
+    link: "/retouching",
+  },
 ]
