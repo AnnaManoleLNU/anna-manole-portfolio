@@ -36,12 +36,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} antialiased`}
       >
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
+        > */}
           <div className="flex flex-col min-h-screen p-2 mt-8 md:mt-0 md:p-8">
             <Navigation />
 
@@ -55,7 +55,7 @@ export default function RootLayout({
               </p>
             </footer>
           </div>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
