@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono, Cormorant_Garamond } from "next/font/google";
-import { ThemeProvider } from "./theme-provider";
+// import { ThemeProvider } from "./theme-provider";
 
 import Navigation from "./navigation";
 import "./globals.css";
