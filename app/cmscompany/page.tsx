@@ -46,19 +46,15 @@ export default function ProjectPage() {
               <h2 className="text-2xl font-bold mb-4">Key Features</h2>
               <ol className="list-decimal list-inside space-y-2">
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">CMS Integration:</strong> 
+                  <strong className="text-foreground">CMS Integration: </strong> 
                   Easy project and content updates without touching code.
                 </li>
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">SEO Optimization:</strong> 
+                  <strong className="text-foreground">SEO Optimization: </strong> 
                   Built-in SSR via Next.js ensures visibility in search engines.
                 </li>
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">Cost Calculator:</strong> 
-                  Optional utility feature for estimating service costs.
-                </li>
-                <li className="text-muted-foreground">
-                  <strong className="text-foreground">Modern Tech Stack:</strong> 
+                  <strong className="text-foreground">Modern Tech Stack: </strong> 
                   Combines JAMstack principles with Next.js, Tailwind CSS, Sanity, and Vercel.
                 </li>
               </ol>
@@ -93,7 +89,7 @@ export default function ProjectPage() {
           <div className="flex justify-center h-full">
             <figure>
               <Image
-                src="/cms-project-thumbnail.png"
+                src="/cms-graphic-profile.png"
                 alt="Cool Company website preview"
                 width={800}
                 height={1200}
