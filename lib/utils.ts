@@ -18,7 +18,7 @@ export const projects = [
   {
     title: "CMS-Driven Company Website",
     type: "Programming",
-    images: ["/allel-1.png", "/allel-2.png", "/cms-graphic-profile.png"],
+    images: ["/cms-1.png", "/cms-2.png", "/cms-graphic-profile.png"],
     technologies: [
       "Next.js",
       "Tailwind CSS",
