@@ -42,19 +42,47 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         > */}
-          <div className="flex flex-col min-h-screen p-2 mt-8 md:mt-0 md:p-8">
-            <Navigation />
+        <div className="flex flex-col min-h-screen p-2 mt-8 md:mt-0 md:p-8">
+          <Navigation />
 
-            <main className="flex flex-col flex-1 font-sans ">
-              {children}
-            </main>
+          <main className="flex flex-col flex-1 font-sans ">{children}</main>
 
-            <footer>
-              <p className="text-sm text-muted-foreground text-center w-full p-4 font-sans">
-                © {new Date().getFullYear()} Anna Manole. All rights reserved.
+          <footer className="w-full border-t font-sans">
+            <div className=" grid grid-cols-2 md:grid-cols-3 items-end gap-4 p-4 text-sm">
+              {/* Left column (links) */}
+              <div className="flex flex-col gap-1 text-left">
+                <a
+                  href="https://linkedin.com/in/anna-manole"
+                  className="hover:underline font-semibold"
+                >
+                  Linkedin
+                </a>
+                <a
+                  href="https://github.com/AnnaManoleLNU"
+                  className="hover:underline font-semibold"
+                >
+                  Github
+                </a>
+                <a
+                  href="mailto:manoleann@gmail.com"
+                  className="hover:underline uppercase tracking-wide text-xs md:text-sm"
+                >
+                  manoleann@gmail.com
+                </a>
+              </div>
+
+              {/* Middle: domain (goes under links on small, center on md+) */}
+              <p className="font-semibold text-left md:text-center col-start-1 row-start-2 md:col-start-auto md:row-start-auto">
+                annamanole.com
               </p>
-            </footer>
-          </div>
+
+              {/* Right: year (always right & bottom aligned) */}
+              <p className="font-semibold text-right justify-self-end self-end col-start-2 row-span-2 md:col-start-auto md:row-span-1">
+                © {new Date().getFullYear()}
+              </p>
+            </div>
+          </footer>
+        </div>
         {/* </ThemeProvider> */}
       </body>
     </html>
