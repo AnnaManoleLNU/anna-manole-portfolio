@@ -52,7 +52,7 @@ export const projects: Project[] = [
     type: "Design",
     website: "",
     github: "",
-    date: "October 2023",
+    date: "June 2021",
     images: [
       "/retouching-1.jpg",
       "/retouching-2.jpg",

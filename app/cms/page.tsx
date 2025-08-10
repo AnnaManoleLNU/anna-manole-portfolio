@@ -26,7 +26,10 @@ export default function ProjectPage() {
     };
   }, [zoomSrc, closeZoom]);
 
-  if (!cmsProject) return <section className="container mx-auto py-16">Project not found</section>;
+  if (!cmsProject)
+    return (
+      <section className="container mx-auto py-16">Project not found</section>
+    );
 
   return (
     <section className="container mx-auto py-16 relative">
@@ -34,7 +37,6 @@ export default function ProjectPage() {
         CMS-Driven Company Website
       </h1>
 
-      {/* Main section: info left, image right (like Pwd) */}
       <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_auto] gap-12 xl:gap-16 items-start">
         <div className="flex flex-col gap-20 w-full xl:max-w-3xl">
           <ProjectInfo
@@ -45,15 +47,13 @@ export default function ProjectPage() {
           />
 
           <div className="space-y-20 text-base leading-relaxed">
-            
-              <p className="text-2xl font-bold leading-12">
-                This project involved building a modern, responsive company website using a headless CMS.
-                The goal was to enable easy content management, SEO optimization, and scalability—while
-                maintaining a professional, uniform design.
-              
+            <p className="text-2xl font-bold leading-12">
+              This project involved building a modern, responsive company
+              website using a headless CMS. The goal was to enable easy content
+              management, SEO optimization, and scalability—while maintaining a
+              professional, uniform design.
             </p>
 
-            {/* Key Features */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold">Key Features</h2>
               <ol className="list-decimal list-inside space-y-2">
@@ -62,45 +62,55 @@ export default function ProjectPage() {
                   Easy project and content updates without touching code.
                 </li>
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">SEO Optimization: </strong>
+                  <strong className="text-foreground">
+                    SEO Optimization:{" "}
+                  </strong>
                   Built-in SSR via Next.js ensures visibility in search engines.
                 </li>
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">Modern Tech Stack: </strong>
-                  Combines JAMstack principles with Next.js, Tailwind CSS, Sanity, and Vercel.
+                  <strong className="text-foreground">
+                    Modern Tech Stack:{" "}
+                  </strong>
+                  Combines JAMstack principles with Next.js, Tailwind CSS,
+                  Sanity, and Vercel.
                 </li>
               </ol>
             </div>
 
-            {/* Tech stack */}
             <div className="space-y-3">
               <h2 className="text-2xl font-bold mb-1">Technology Stack</h2>
 
               <h3 className="text-xl font-semibold mt-4">Next.js</h3>
               <p className="text-muted-foreground">
-                Offers server-side rendering, structured content, and great performance out-of-the-box.
+                Offers server-side rendering, structured content, and great
+                performance out-of-the-box.
               </p>
 
               <h3 className="text-xl font-semibold mt-4">Tailwind CSS</h3>
               <p className="text-muted-foreground">
-                Enables a responsive and accessible UI using utility-first styling.
+                Enables a responsive and accessible UI using utility-first
+                styling.
               </p>
 
               <h3 className="text-xl font-semibold mt-4">Sanity CMS</h3>
               <p className="text-muted-foreground">
-                Flexible and scalable content management, with real-time editing and image support.
+                Flexible and scalable content management, with real-time editing
+                and image support.
               </p>
 
               <h3 className="text-xl font-semibold mt-4">Vercel</h3>
               <p className="text-muted-foreground">
-                Deployed on Vercel for optimal performance, CI/CD, and global availability.
+                Deployed on Vercel for optimal performance, CI/CD, and global
+                availability.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Right column image with simple zoom (same as Pwd) */}
-        <button onClick={() => handleZoom("/cms-graphic-profile.png")} className="inline-block cursor-zoom-in">
+        <button
+          onClick={() => handleZoom("/cms-graphic-profile.png")}
+          className="inline-block cursor-zoom-in"
+        >
           <figure className="max-w-full">
             <Image
               src="/cms-graphic-profile.png"
@@ -118,7 +128,6 @@ export default function ProjectPage() {
         </button>
       </div>
 
-      {/* Zoom overlay (same pattern as Pwd) */}
       <AnimatePresence>
         {zoomSrc && (
           <motion.div
@@ -133,7 +142,7 @@ export default function ProjectPage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              onClick={closeZoom} // click image to close too
+              onClick={closeZoom} 
             >
               <Image
                 src={zoomSrc}

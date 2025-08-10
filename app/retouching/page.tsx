@@ -1,5 +1,5 @@
 "use client";
-import { Badge } from "@/components/ui/badge";
+import ProjectInfo from "@/components/custom/projectInfo";
 import { projects } from "@/lib/utils";
 import { ArrowLeftRightIcon } from "lucide-react";
 import {
@@ -8,21 +8,21 @@ import {
 } from "react-compare-slider";
 
 export default function Retouching() {
+  const project = projects.find((p) => p.link === "/retouching");
+
+  if (!project) return <section className="container mx-auto py-16">Project not found</section>;
   return (
-    <section className="container mx-auto py-12 ">
-      <h1 className="text-4xl font-extrabold  tracking-tight lg:text-6xl mb-2">
-        Selected Retouching Projects
+    <section className="container mx-auto py-16 relative">
+      <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight mb-12 pb-6 border-b">
+        {project.title}
       </h1>
 
-      <div className="flex flex-wrap gap-2 mb-6">
-        {projects
-          .find((project) => project.link === "/retouching")
-          ?.technologies.map((tech, i) => (
-            <Badge key={i} variant="outline">
-              {tech}
-            </Badge>
-          ))}
-      </div>
+      <ProjectInfo
+            website={project.website}
+            github={project.github}
+            date={project.date}
+            technologies={project.technologies}
+          />
 
       <div className="mt-12 space-y-12 text-base leading-relaxed">
         <div className="flex flex-col lg:flex-col xl:flex-row gap-14 items-center">

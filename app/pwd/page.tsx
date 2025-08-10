@@ -38,7 +38,7 @@ export default function Pwd() {
       </h1>
 
       {/* Main Application Section */}
-      <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_auto] gap-12 xl:gap-16 items-end">
+      <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_auto] gap-12 xl:gap-16 items-center">
         <div className="flex flex-col gap-10 w-full xl:max-w-3xl">
           <ProjectInfo
             website={pwdProject.website}
@@ -81,7 +81,7 @@ export default function Pwd() {
       {/* Sub-App Sections */}
       <div className="mt-20 text-base leading-relaxed space-y-16">
         {/* Memory Sub-App */}
-        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-10 md:gap-16 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-10 md:gap-16 items-center">
           <div className="flex flex-col gap-4 max-w-prose">
             <h2 className="text-2xl font-bold">Memory Sub-App</h2>
             <p className="text-muted-foreground text-justify">
@@ -110,7 +110,7 @@ export default function Pwd() {
         </div>
 
         {/* Chat Sub-App */}
-        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-10 md:gap-16 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-10 md:gap-16 items-center">
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold">Chat Sub-App</h2>
             <p className="text-muted-foreground text-justify">
@@ -136,7 +136,7 @@ export default function Pwd() {
         </div>
 
         {/* Recipe Browser Sub-App */}
-        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-10 md:gap-16 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-10 md:gap-16 items-center">
           <div className="flex flex-col gap-4 ">
             <h2 className="text-2xl font-bold">Recipe Browser Sub-App</h2>
             <p className="text-muted-foreground text-justify">
