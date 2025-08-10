@@ -1,5 +1,3 @@
-import { Button } from "../ui/button";
-
 type ProjectInfoProps = {
   title: string;
   website: string;
@@ -20,39 +18,44 @@ export default function ProjectInfo({
       <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-12 pb-4 border-b">
         {title}
       </h1>
+
       <div className="lg:w-1/2 flex flex-col gap-4">
-        <div className="flex justify-between pb-4 border-b">
-          <h2 className="font-semibold">Live Website </h2>
-          <Button
-            variant="link"
-            className="underline text-muted-foreground text-sm pr-0 font-normal"
-            onClick={() => window.open(website, "_blank")}
+        {/* Row */}
+        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] pb-4 border-b items-center gap-x-8">
+          <h2 className="font-semibold text-left">Live Website</h2>
+          <a
+            href={website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:justify-self-end text-left md:text-right text-sm text-muted-foreground underline break-words break-all"
           >
             {website}
-          </Button>
+          </a>
         </div>
 
-        <div className="flex justify-between pb-4 border-b">
-          <h2 className="font-semibold">GitHub Repository</h2>
-          <Button
-            variant="link"
-            className="underline text-muted-foreground text-sm pr-0 font-normal"
-            onClick={() => window.open(github, "_blank")}
+        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] items-center pb-4 border-b gap-x-8">
+          <h2 className="font-semibold text-left">GitHub Repository</h2>
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:justify-self-end text-left md:text-right text-sm text-muted-foreground underline break-words break-all"
           >
             {github}
-          </Button>
+          </a>
         </div>
 
-        <div className="flex justify-between pb-4 border-b">
-          <h2 className="font-semibold">Date</h2>
-          <p className=" text-muted-foreground text-sm">{date}</p>
+        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] items-center pb-4 border-b gap-x-8">
+          <h2 className="font-semibold text-left">Date</h2>
+          <p className="md:justify-self-end text-left md:text-right text-sm text-muted-foreground break-words break-all">
+            {date}
+          </p>
         </div>
 
-        <div className="flex justify-between pb-4">
-          <h2 className="font-semibold">Technologies</h2>
-
-          <p className="text-muted-foreground text-sm">
-            {technologies.join(",\u00A0\u00A0")}
+        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] items-center pb-4 gap-x-8">
+          <h2 className="font-semibold text-left">Technologies</h2>
+          <p className="md:justify-self-end text-left md:text-right text-sm text-muted-foreground break-words break-all">
+            {technologies.join(", ")}
           </p>
         </div>
       </div>
