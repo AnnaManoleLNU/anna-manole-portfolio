@@ -31,8 +31,8 @@ export const projects: Project[] = [
   },
   {
     title: "CMS-Driven Company Website",
-    website: "https://cms-company-website.vercel.app",
-    github: "https://github.com/AnnaManoleLNU/CMS-Driven-Company-Website/",
+    website: "https://cmscompany.vercel.app",
+    github: "https://github.com/AnnaManoleLNU/cmscompany",
     date: "November 2023",
     type: "Programming",
     images: ["/cms-1.png", "/cms-2.png", "/cms-graphic-profile.png"],
