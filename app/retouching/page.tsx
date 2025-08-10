@@ -157,7 +157,7 @@ export default function Retouching() {
          
         </div>
 
-        <div className="flex-1">
+        <div className="flex-1 mb-10">
               <ReactCompareSlider
                 itemOne={
                   <ReactCompareSliderImage
