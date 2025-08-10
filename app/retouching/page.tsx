@@ -6,6 +6,7 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
+import BackButton from "@/components/custom/backButton";
 
 export default function Retouching() {
   const project = projects.find((p) => p.link === "/retouching");
@@ -183,6 +184,8 @@ export default function Retouching() {
               />
             </div>
       </div>
+
+      <BackButton />
     </section>
   );
 }

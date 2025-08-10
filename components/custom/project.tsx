@@ -38,15 +38,10 @@ export default function Project() {
               </div>
             </div>
 
-            {/* Text */}
             <div className="flex flex-col gap-4 md:flex-row md:justify-between  lg:gap-64  text-muted-foreground">
               <div className="flex gap-2 flex-1">
                 <p
-                  className={`text-sm ${
-                    project.type === "Programming"
-                      ? "text-blue-500 hover:text-blue-600"
-                      : "text-green-500 hover:text-green-600"
-                  }`}
+                 className="text-sm"
                 >
                   {project.type}
                 </p>

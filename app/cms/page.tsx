@@ -5,6 +5,7 @@ import Image from "next/image";
 import { projects } from "@/lib/utils";
 import ProjectInfo from "@/components/custom/projectInfo";
 import { AnimatePresence, motion } from "framer-motion";
+import BackButton from "@/components/custom/backButton";
 
 export default function ProjectPage() {
   const [zoomSrc, setZoomSrc] = useState<string | null>(null);
@@ -156,6 +157,8 @@ export default function ProjectPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+       <BackButton />
     </section>
   );
 }

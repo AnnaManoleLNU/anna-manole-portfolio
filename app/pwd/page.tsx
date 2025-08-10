@@ -5,6 +5,7 @@ import Image from "next/image";
 import { projects } from "@/lib/utils";
 import ProjectInfo from "@/components/custom/projectInfo";
 import { AnimatePresence, motion } from "framer-motion";
+import BackButton from "@/components/custom/backButton";
 
 export default function Pwd() {
   const [zoomSrc, setZoomSrc] = useState<string | null>(null);
@@ -53,10 +54,7 @@ export default function Pwd() {
               The Personal Web Desktop application mimics a desktop environment
               within a browser. It features a dock where users can launch
               different sub-applications and manage them just like in a
-              traditional operating system. Multiple instances of the same or
-              different sub-applications can be opened and freely dragged around
-              the interface. The focused sub-application always appears in front
-              of others, ensuring smooth multitasking.
+              traditional operating system.
             </p>
           </div>
         </div>
@@ -191,6 +189,8 @@ export default function Pwd() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <BackButton />
     </section>
   );
 }
