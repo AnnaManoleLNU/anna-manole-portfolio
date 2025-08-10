@@ -1,4 +1,4 @@
-import Project from "@/components/project";
+import Project from "@/components/custom/project";
 
 export default function Home() {
   return (

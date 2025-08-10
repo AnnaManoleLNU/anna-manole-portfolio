@@ -1,51 +1,26 @@
 "use client";
-import { Badge } from "@/components/ui/badge";
+
 import Image from "next/image";
 import { projects } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { SquareArrowOutUpRight } from "lucide-react";
+
+import ProjectInfo from "@/components/custom/projectInfo";
 
 export default function Pwd() {
+  const pwdProject = projects.find(
+    (project) => project.title === "Personal Web Desktop"
+  );
+
+  if (!pwdProject) return <div>Project not found</div>;
   return (
     <section className="container mx-auto py-12 ">
-      <h1 className="text-4xl font-extrabold  tracking-tight lg:text-6xl mb-2">
-        Personal Web Desktop Application
-      </h1>
 
-      <div className="flex flex-wrap gap-2 mb-6">
-        {projects
-          .find((project) => project.link === "/pwd")
-          ?.technologies.map((tech, i) => (
-            <Badge key={i} variant="outline">
-              {tech}
-            </Badge>
-          ))}
-      </div>
-
-      <Button
-        variant="outline"
-        className=" mr-2 bg-pink-200  hover:bg-pink-300 transition-colors"
-        onClick={() =>
-          window.open("https://personal-web-desktop.vercel.app/", "_blank")
-        }
-      >
-        <span>Visit Website</span>
-        <SquareArrowOutUpRight size={16} />
-      </Button>
-
-      <Button
-        variant="outline"
-        className=" bg-foreground text-background hover:bg-foreground/80 hover:text-background transition-colors"
-        onClick={() =>
-          window.open(
-            "https://github.com/AnnaManoleLNU/PWD---personal-web-desktop/",
-            "_blank"
-          )
-        }
-      >
-        <span>GitHub Repository</span>
-        <SquareArrowOutUpRight size={16} />
-      </Button>
+      <ProjectInfo
+        title={pwdProject.title}
+        website={pwdProject.website}
+        github={pwdProject.github}
+        date={pwdProject.date}
+        technologies={pwdProject?.technologies}
+      />
 
       <div className="mt-12 space-y-12 text-base leading-relaxed text-justify">
         <div className="flex flex-col lg:flex-col xl:flex-row gap-14 items-center">

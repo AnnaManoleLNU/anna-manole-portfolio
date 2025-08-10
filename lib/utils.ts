@@ -4,10 +4,24 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+type Project = {
+  title: string;
+  website: string;
+  github: string;
+  date: string;
+  type: string;
+  images: string[];
+  technologies: string[];
+  description: string;
+  link: string;
+};
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: "Personal Web Desktop",
+    website: "https://personal-web-desktop.vercel.app",
+    github: "https://github.com/AnnaManoleLNU/PWD---personal-web-desktop",
+    date: "December 2023",
     type: "Programming",
     images: ["/pwd-chat.png", "/pwd-cookbook.png", "/pwd-memory.png"],
     technologies: ["WebComponents", "CSS", "ES6", "WebSockets", "Node.js"],
@@ -17,6 +31,9 @@ export const projects = [
   },
   {
     title: "CMS-Driven Company Website",
+    website: "https://cms-company-website.vercel.app",
+    github: "https://github.com/AnnaManoleLNU/CMS-Driven-Company-Website/",
+    date: "November 2023",
     type: "Programming",
     images: ["/cms-1.png", "/cms-2.png", "/cms-graphic-profile.png"],
     technologies: [
@@ -33,6 +50,9 @@ export const projects = [
   {
     title: "Selected Retouching Projects",
     type: "Design",
+    website: "",
+    github: "",
+    date: "October 2023",
     images: [
       "/retouching-1.jpg",
       "/retouching-2.jpg",
