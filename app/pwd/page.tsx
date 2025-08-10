@@ -37,7 +37,7 @@ export default function Pwd() {
         {pwdProject.title}
       </h1>
 
-      {/* Main app section */}
+      {/* Main Application Section */}
       <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_auto] gap-12 xl:gap-16 items-end">
         <div className="flex flex-col gap-10 w-full xl:max-w-3xl">
           <ProjectInfo
@@ -46,6 +46,7 @@ export default function Pwd() {
             date={pwdProject.date}
             technologies={pwdProject.technologies}
           />
+
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Main Application</h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -77,7 +78,7 @@ export default function Pwd() {
         </button>
       </div>
 
- 
+      {/* Sub-App Sections */}
       <div className="mt-20 text-base leading-relaxed space-y-16">
         {/* Memory Sub-App */}
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-10 md:gap-16 items-end">
@@ -165,7 +166,7 @@ export default function Pwd() {
       <AnimatePresence>
         {zoomSrc && (
           <motion.div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4"
             onClick={closeZoom}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -176,14 +177,14 @@ export default function Pwd() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={closeZoom} // Clicking image also closes
             >
               <Image
                 src={zoomSrc}
                 alt="Zoomed"
                 width={1600}
                 height={2400}
-                className="w-auto h-auto max-w-[90vw] max-h-[90vh]"
+                className="w-auto h-auto max-w-[90vw] max-h-[90vh] cursor-zoom-out"
                 quality={95}
               />
             </motion.div>

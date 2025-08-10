@@ -20,7 +20,7 @@ export const projects: Project[] = [
   {
     title: "Personal Web Desktop",
     website: "https://personal-web-desktop.vercel.app",
-    github: "https://github.com/AnnaManoleLNU/PWD---personal-web-desktop",
+    github: "https://github.com/AnnaManoleLNU/pwd",
     date: "December 2023",
     type: "Programming",
     images: ["/pwd-chat.png", "/pwd-cookbook.png", "/pwd-memory.png"],
