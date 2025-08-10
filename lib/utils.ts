@@ -45,7 +45,7 @@ export const projects: Project[] = [
     ],
     description:
       "This project involved building a modern, responsive company website using a headless CMS. The goal was to enable easy content management, SEO optimization, and scalability—while maintaining a professional, uniform design.",
-    link: "/cmscompany",
+    link: "/cms",
   },
   {
     title: "Selected Retouching Projects",

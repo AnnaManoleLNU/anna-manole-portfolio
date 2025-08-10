@@ -49,7 +49,6 @@ export default function RootLayout({
 
           <footer className="w-full border-t font-sans">
             <div className=" grid grid-cols-2 md:grid-cols-3 items-end gap-4 p-4 text-sm">
-              {/* Left column (links) */}
               <div className="flex flex-col gap-1 text-left">
                 <a
                   href="https://linkedin.com/in/anna-manole"
@@ -71,12 +70,10 @@ export default function RootLayout({
                 </a>
               </div>
 
-              {/* Middle: domain (goes under links on small, center on md+) */}
               <p className="font-semibold text-left md:text-center col-start-1 row-start-2 md:col-start-auto md:row-start-auto">
                 annamanole.com
               </p>
 
-              {/* Right: year (always right & bottom aligned) */}
               <p className="font-semibold text-right justify-self-end self-end col-start-2 row-span-2 md:col-start-auto md:row-span-1">
                 © {new Date().getFullYear()}
               </p>

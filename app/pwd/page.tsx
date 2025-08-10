@@ -47,9 +47,9 @@ export default function Pwd() {
             technologies={pwdProject.technologies}
           />
 
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold">Main Application</h2>
-            <p className="text-muted-foreground leading-relaxed">
+          <div className="space-y-10 text-base leading-relaxed">
+            
+            <p className="text-2xl font-bold leading-12">
               The Personal Web Desktop application mimics a desktop environment
               within a browser. It features a dock where users can launch
               different sub-applications and manage them just like in a
