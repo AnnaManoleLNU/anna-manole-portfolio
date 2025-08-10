@@ -53,12 +53,16 @@ export default function RootLayout({
                 <a
                   href="https://linkedin.com/in/anna-manole"
                   className="hover:underline font-semibold"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Linkedin
                 </a>
                 <a
                   href="https://github.com/AnnaManoleLNU"
                   className="hover:underline font-semibold"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Github
                 </a>
