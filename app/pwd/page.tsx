@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { projects } from "@/lib/utils";
-
 import ProjectInfo from "@/components/custom/projectInfo";
 
 export default function Pwd() {
@@ -11,22 +10,24 @@ export default function Pwd() {
   );
 
   if (!pwdProject) return <div>Project not found</div>;
+
   return (
-    <section className="container mx-auto py-12 ">
+    <section className="container mx-auto py-12">
+      {/* 2-col on xl, airy gaps; items-stretch makes the image column match left height */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-16 items-stretch">
+        {/* LEFT: Project info + main description stacked */}
+        <div className="flex flex-col gap-10 max-w-3xl">
+          <ProjectInfo
+            title={pwdProject.title}
+            website={pwdProject.website}
+            github={pwdProject.github}
+            date={pwdProject.date}
+            technologies={pwdProject.technologies}
+          />
 
-      <ProjectInfo
-        title={pwdProject.title}
-        website={pwdProject.website}
-        github={pwdProject.github}
-        date={pwdProject.date}
-        technologies={pwdProject?.technologies}
-      />
-
-      <div className="mt-12 space-y-12 text-base leading-relaxed text-justify">
-        <div className="flex flex-col lg:flex-col xl:flex-row gap-14 items-center">
           <div className="flex-1">
             <h2 className="text-2xl font-bold mb-4">Main Application</h2>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground leading-relaxed">
               The Personal Web Desktop application mimics a desktop environment
               within a browser. It features a dock where users can launch
               different sub-applications and manage them just like in a
@@ -36,25 +37,29 @@ export default function Pwd() {
               of others, ensuring smooth multitasking.
             </p>
           </div>
-          <Image
-            src="/pwd.png"
-            alt="Personal Web Desktop Screenshot"
-            width={800}
-            height={1200}
-            className="object-cover h-full border border-foreground"
-          />
         </div>
 
-        {/* Sub-Applications Row */}
+        <Image
+          src="/pwd.png"
+          alt="Personal Web Desktop Screenshot"
+          width={1600} 
+          height={2400}
+          className="w-full h-full object-cover "
+          priority
+        />
+      </div>
+
+      {/* Sub-apps grid below */}
+      <div className="mt-16 space-y-12 text-base leading-relaxed">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Memory App */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center text-center">
             <Image
               src="/pwd-memory.png"
               alt="Memory Game Screenshot"
               width={400}
               height={600}
-              className="object-cover  border border-foreground"
+              className="w-full h-auto object-cover "
             />
             <h2 className="text-xl font-bold mt-4">Memory Sub-App</h2>
             <p className="text-muted-foreground">
@@ -68,13 +73,13 @@ export default function Pwd() {
           </div>
 
           {/* Chat App */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center text-center">
             <Image
               src="/pwd-chat.png"
               alt="Chat App Screenshot"
               width={400}
               height={600}
-              className="object-cover  border border-foreground"
+              className="w-full h-auto object-cover rounded-lg border border-foreground/20"
             />
             <h2 className="text-xl font-bold mt-4">Chat Sub-App</h2>
             <p className="text-muted-foreground">
@@ -86,13 +91,13 @@ export default function Pwd() {
           </div>
 
           {/* Recipe Browser App */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center text-center">
             <Image
               src="/pwd-cookbook.png"
               alt="Recipe Browser Screenshot"
               width={400}
               height={600}
-              className="object-cover border border-foreground"
+              className="w-full h-auto object-cover rounded-lg border border-foreground/20"
             />
             <h2 className="text-xl font-bold mt-4">Recipe Browser Sub-App</h2>
             <p className="text-muted-foreground">

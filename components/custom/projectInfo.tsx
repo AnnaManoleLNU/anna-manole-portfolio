@@ -19,7 +19,7 @@ export default function ProjectInfo({
         {title}
       </h1>
 
-      <div className="lg:w-1/2 flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         {/* Row */}
         <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] pb-4 border-b items-center gap-x-8">
           <h2 className="font-semibold text-left">Live Website</h2>
