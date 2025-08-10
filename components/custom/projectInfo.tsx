@@ -1,5 +1,4 @@
 type ProjectInfoProps = {
-  title: string;
   website: string;
   github: string;
   date: string;
@@ -7,7 +6,6 @@ type ProjectInfoProps = {
 };
 
 export default function ProjectInfo({
-  title,
   website,
   github,
   date,
@@ -15,9 +13,6 @@ export default function ProjectInfo({
 }: ProjectInfoProps) {
   return (
     <div>
-      <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-12 pb-4 border-b">
-        {title}
-      </h1>
 
       <div className="flex flex-col gap-4">
         {/* Row */}
