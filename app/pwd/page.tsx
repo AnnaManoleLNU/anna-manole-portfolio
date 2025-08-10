@@ -1,31 +1,51 @@
 "use client";
 
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { projects } from "@/lib/utils";
 import ProjectInfo from "@/components/custom/projectInfo";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Pwd() {
+  const [zoomSrc, setZoomSrc] = useState<string | null>(null);
+
   const pwdProject = projects.find(
     (project) => project.title === "Personal Web Desktop"
   );
 
+  const handleZoom = useCallback((src: string) => setZoomSrc(src), []);
+  const closeZoom = useCallback(() => setZoomSrc(null), []);
+
+  // Lock scroll & ESC to close
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && closeZoom();
+    if (zoomSrc) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", onKey);
+    }
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [zoomSrc, closeZoom]);
+
   if (!pwdProject) return <div>Project not found</div>;
 
   return (
-    <section className="container mx-auto py-16">
+    <section className="container mx-auto py-16 relative">
       <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight mb-12 pb-6 border-b">
         {pwdProject.title}
       </h1>
 
+      {/* Main app section */}
       <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_auto] gap-12 xl:gap-16 items-end">
-        <div className="flex flex-col gap-10 max-w-3xl">
+        <div className="flex flex-col gap-10 w-full xl:max-w-3xl">
           <ProjectInfo
             website={pwdProject.website}
             github={pwdProject.github}
             date={pwdProject.date}
             technologies={pwdProject.technologies}
           />
-
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Main Application</h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -40,24 +60,26 @@ export default function Pwd() {
           </div>
         </div>
 
-        {/* RIGHT: Main image — intrinsic sizing, right-aligned, no upscaling */}
-        <div className="justify-self-end self-end">
+        <button
+          onClick={() => handleZoom("/pwd.png")}
+          className="inline-block cursor-zoom-in"
+        >
           <Image
             src="/pwd.png"
             alt="Personal Web Desktop Screenshot"
             width={1200}
             height={1800}
-            className="w-auto h-auto max-h-full "
+            className="w-auto h-auto max-w-full"
             sizes="(max-width: 1279px) 100vw, 600px"
             quality={90}
             priority
           />
-        </div>
+        </button>
       </div>
 
-      {/* Sub-Applications */}
+ 
       <div className="mt-20 text-base leading-relaxed space-y-16">
-        {/* Memory: text | image (grid, bottom aligned) */}
+        {/* Memory Sub-App */}
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-10 md:gap-16 items-end">
           <div className="flex flex-col gap-4 max-w-prose">
             <h2 className="text-2xl font-bold">Memory Sub-App</h2>
@@ -71,17 +93,22 @@ export default function Pwd() {
             </p>
           </div>
 
-          <Image
-            src="/pwd-memory.png"
-            alt="Memory Game Screenshot"
-            width={800}
-            height={1200}
-            className="w-auto h-auto max-w-full "
-            quality={90}
-          />
+          <button
+            onClick={() => handleZoom("/pwd-memory.png")}
+            className="inline-block cursor-zoom-in"
+          >
+            <Image
+              src="/pwd-memory.png"
+              alt="Memory Game Screenshot"
+              width={800}
+              height={1200}
+              className="w-auto h-auto max-w-full"
+              quality={90}
+            />
+          </button>
         </div>
 
-        {/* Chat: text | image (grid, bottom aligned) */}
+        {/* Chat Sub-App */}
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-10 md:gap-16 items-end">
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold">Chat Sub-App</h2>
@@ -93,15 +120,21 @@ export default function Pwd() {
             </p>
           </div>
 
-          <Image
-            src="/pwd-chat.png"
-            alt="Chat App Screenshot"
-            width={800}
-            height={1200}
-            className="w-auto h-auto max-w-full"
-          />
+          <button
+            onClick={() => handleZoom("/pwd-chat.png")}
+            className="inline-block cursor-zoom-in"
+          >
+            <Image
+              src="/pwd-chat.png"
+              alt="Chat App Screenshot"
+              width={800}
+              height={1200}
+              className="w-auto h-auto max-w-full"
+            />
+          </button>
         </div>
 
+        {/* Recipe Browser Sub-App */}
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-10 md:gap-16 items-end">
           <div className="flex flex-col gap-4 ">
             <h2 className="text-2xl font-bold">Recipe Browser Sub-App</h2>
@@ -113,15 +146,50 @@ export default function Pwd() {
             </p>
           </div>
 
-          <Image
-            src="/pwd-cookbook.png"
-            alt="Recipe Browser Screenshot"
-            width={800}
-            height={1200}
-            className="w-auto h-auto max-w-full"
-          />
+          <button
+            onClick={() => handleZoom("/pwd-cookbook.png")}
+            className="inline-block cursor-zoom-in"
+          >
+            <Image
+              src="/pwd-cookbook.png"
+              alt="Recipe Browser Screenshot"
+              width={800}
+              height={1200}
+              className="w-auto h-auto max-w-full"
+            />
+          </button>
         </div>
       </div>
+
+      {/* Zoom Overlay */}
+      <AnimatePresence>
+        {zoomSrc && (
+          <motion.div
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            onClick={closeZoom}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={zoomSrc}
+                alt="Zoomed"
+                width={1600}
+                height={2400}
+                className="w-auto h-auto max-w-[90vw] max-h-[90vh]"
+                quality={95}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
