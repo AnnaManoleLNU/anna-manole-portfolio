@@ -26,17 +26,6 @@ export default function Retouching() {
           />
 
       <div className="mt-12 space-y-12 text-base leading-relaxed">
-        <div className="flex flex-col lg:flex-col xl:flex-row gap-14 items-center">
-          <div className="flex-1">
-            <p className="text-muted-foreground text-justify">
-              In this section, I showcase a selection of my retouching projects
-              where I utilized Photoshop, Lightroom, and Canva to enhance the
-              visual appeal of various images. These projects include retouching
-              portraits, product photography, and nature photography.
-            </p>
-          </div>
-        </div>
-        {/* Do a before and after image comparison slider */}
 
         <div className="flex flex-col xl:flex-row gap-0 md:gap-8 items-center">
           <div className="flex flex-col">
