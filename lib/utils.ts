@@ -21,7 +21,7 @@ export const projects: Project[] = [
     title: "Personal Web Desktop",
     website: "https://personal-web-desktop.vercel.app",
     github: "https://github.com/AnnaManoleLNU/pwd",
-    date: "December 2023",
+    date: "December 2022",
     type: "Programming",
     images: ["/pwd-chat.png", "/pwd-cookbook.png", "/pwd-memory.png"],
     technologies: ["WebComponents", "CSS", "ES6", "WebSockets", "Node.js"],
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     title: "CMS-Driven Company Website",
     website: "https://cmscompany.vercel.app",
     github: "https://github.com/AnnaManoleLNU/cmscompany",
-    date: "November 2023",
+    date: "June 2023",
     type: "Programming",
     images: ["/cms-1.png", "/cms-2.png", "/cms-graphic-profile.png"],
     technologies: [
