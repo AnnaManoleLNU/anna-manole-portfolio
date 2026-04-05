@@ -14,7 +14,7 @@ export default function Home() {
       </h1>
 
       <p className="text-sm md:text-base lg:text-lg font-sans mt-2">
-        Full-stack developer, with a background in graphic design. I specialize in UX and UI design as well as photography. Let’s work together!
+        Full-stack developer, with a background in graphic design. I specialize in UX and UI design. Let’s work together!
       </p>
     </section>
       <Project />

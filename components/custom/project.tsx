@@ -52,15 +52,32 @@ export default function Project() {
               </div>
               <div className="flex flex-col flex-1 ">
                 <p className="text-sm">{project.description}</p>
-                <div
-                  className={`group font-semibold mt-2 flex items-center ${
-                    project.type === "Programming"
-                      ? "text-blue-500 hover:text-blue-600"
-                      : "text-green-500 hover:text-green-600"
-                  }`}
-                >
-                  <a href={project.link}>See More</a>
-                  <ArrowRight className="inline ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                <div className="flex justify-between items-center mt-2">
+                   <div
+                    className={`group font-semibold mt-2 flex items-center ${
+                      project.type === "Programming"
+                        ? "text-blue-500 hover:text-blue-600"
+                        : "text-green-500 hover:text-green-600"
+                    }`}
+                  >
+                    {project.website && (
+                      <a href={project.website} target="_blank" rel="noopener noreferrer">
+                        Website
+                      </a>
+                    )}
+                  </div>
+                  <div
+                    className={`group font-semibold mt-2 flex items-center ${
+                      project.type === "Programming"
+                        ? "text-blue-500 hover:text-blue-600"
+                        : "text-green-500 hover:text-green-600"
+                    }`}
+                  >
+                    <a href={project.link}>Read More</a>
+                    <ArrowRight className="inline ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+
+                 
                 </div>
               </div>
             </div>
