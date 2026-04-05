@@ -25,7 +25,8 @@ export const projects: Project[] = [
     type: "Programming",
     images: ["/pwd-chat.png", "/pwd-cookbook.png", "/pwd-memory.png"],
     technologies: ["WebComponents", "CSS", "ES6", "WebSockets", "Node.js"],
-    description: "The Personal Web Desktop application mimics a desktop environment within a browser. It features a dock where users can launch different sub-applications and manage them just like in a traditional operating system.",
+    description:
+      "The Personal Web Desktop application mimics a desktop environment within a browser. It features a dock where users can launch different sub-applications and manage them just like in a traditional operating system.",
     link: "/pwd",
   },
   {
@@ -60,7 +61,7 @@ export const projects: Project[] = [
     ],
     technologies: ["Photoshop", "Lightroom"],
     description:
-      "Different retouching projects, where I have used Photoshop and Lightroom to for retouching or creative photography. These projects include retouching portraits, product photography and nature photography.",
+      "Different retouching projects, where I have used Photoshop and Lightroom to for retouching or creative photography.",
     link: "/retouching",
   },
 ];
