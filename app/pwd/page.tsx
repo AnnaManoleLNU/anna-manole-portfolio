@@ -51,10 +51,7 @@ export default function Pwd() {
           <div className="space-y-10 text-base leading-relaxed">
             
             <p className="text-2xl font-bold leading-12">
-              The Personal Web Desktop application mimics a desktop environment
-              within a browser. It features a dock where users can launch
-              different sub-applications and manage them just like in a
-              traditional operating system.
+              {pwdProject.description}
             </p>
           </div>
         </div>
@@ -83,7 +80,7 @@ export default function Pwd() {
           <div className="flex flex-col gap-4 max-w-prose">
             <h2 className="text-2xl font-bold">Memory Sub-App</h2>
             <p className="text-muted-foreground text-justify">
-              The Memory sub-application offers a classic memory game experience
+              The Memory sub-application is a memory game
               where players aim to find matching pairs of tiles. When tiles are
               flipped and do not match, they return to their original state,
               while successfully matched pairs disappear from the board. Players

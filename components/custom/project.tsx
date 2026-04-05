@@ -40,11 +40,7 @@ export default function Project() {
 
             <div className="flex flex-col gap-4 md:flex-row md:justify-between  lg:gap-64  text-muted-foreground">
               <div className="flex gap-2 flex-1">
-                <p
-                 className="text-sm"
-                >
-                  {project.type}
-                </p>
+                <p className="text-sm">{project.type}</p>
                 <div className="flex flex-col">
                   <h2 className="text-sm font-bold m-0 text-foreground">
                     {project.title}
@@ -54,7 +50,7 @@ export default function Project() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col flex-1 md:ml-48">
+              <div className="flex flex-col flex-1 ">
                 <p className="text-sm">{project.description}</p>
                 <div
                   className={`group font-semibold mt-2 flex items-center ${

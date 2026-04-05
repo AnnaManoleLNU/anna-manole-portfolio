@@ -25,8 +25,7 @@ export const projects: Project[] = [
     type: "Programming",
     images: ["/pwd-chat.png", "/pwd-cookbook.png", "/pwd-memory.png"],
     technologies: ["WebComponents", "CSS", "ES6", "WebSockets", "Node.js"],
-    description:
-      "For this project I created a personal web desktop, which includes a chat application, a cookbook and a memory game. The web desktop is built using WebComponents, CSS and ES6. The chat application uses WebSockets for real-time communication. The cookbook allows users to see recipes, while the memory game is a card matching game with a timer and score tracking.",
+    description: "The Personal Web Desktop application mimics a desktop environment within a browser. It features a dock where users can launch different sub-applications and manage them just like in a traditional operating system.",
     link: "/pwd",
   },
   {
@@ -44,7 +43,7 @@ export const projects: Project[] = [
       "Vercel",
     ],
     description:
-      "This project involved building a modern, responsive company website using a headless CMS. The goal was to enable easy content management, SEO optimization, and scalability—while maintaining a professional, uniform design.",
+      "Fully customizable company website using Sanity, a headless CMS. The goal was to enable easy content management, SEO optimization, and scalability, while maintaining a professional, uniform design.",
     link: "/cms",
   },
   {
@@ -59,9 +58,9 @@ export const projects: Project[] = [
       "/retouching-3.jpg",
       "/retouching-4.jpg",
     ],
-    technologies: ["Photoshop", "Lightroom", "Canva"],
+    technologies: ["Photoshop", "Lightroom"],
     description:
-      "I have worked with different retouching projects, where I have used Photoshop, Lightroom and Canva to create visually appealing images. These projects include retouching portraits, product photography and nature photography.",
+      "Different retouching projects, where I have used Photoshop and Lightroom to for retouching or creative photography. These projects include retouching portraits, product photography and nature photography.",
     link: "/retouching",
   },
 ];

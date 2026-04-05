@@ -11,7 +11,10 @@ import BackButton from "@/components/custom/backButton";
 export default function Retouching() {
   const project = projects.find((p) => p.link === "/retouching");
 
-  if (!project) return <section className="container mx-auto py-16">Project not found</section>;
+  if (!project)
+    return (
+      <section className="container mx-auto py-16">Project not found</section>
+    );
   return (
     <section className="container mx-auto py-16 relative">
       <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight mb-12 pb-6 border-b">
@@ -19,14 +22,13 @@ export default function Retouching() {
       </h1>
 
       <ProjectInfo
-            website={project.website}
-            github={project.github}
-            date={project.date}
-            technologies={project.technologies}
-          />
+        website={project.website}
+        github={project.github}
+        date={project.date}
+        technologies={project.technologies}
+      />
 
       <div className="mt-12 space-y-12 text-base leading-relaxed">
-
         <div className="flex flex-col xl:flex-row gap-0 md:gap-8 items-center">
           <div className="flex flex-col">
             <h2 className="text-2xl font-bold ">Acqua di Gioia Perfume</h2>
@@ -78,15 +80,16 @@ export default function Retouching() {
           />
         </div>
 
-<div>
-
-<h2 className="text-2xl font-bold mt-12">
-          Other Retouching Projects
-        </h2>
-        <p className="text-muted-foreground text-justify mb-6">
-          Here we have a selection of other retouching projects that I have worked on. These projects showcase my skills in enhancing images, whether it be through color correction, object removal, or addition.
-        </p>
-</div>
+        <div>
+          <h2 className="text-2xl font-bold mt-12">
+            Other Retouching Projects
+          </h2>
+          <p className="text-muted-foreground text-justify mb-6">
+            Here we have a selection of other retouching projects that I have
+            worked on. These projects showcase my skills in enhancing images,
+            whether it be through color correction, object removal, or addition.
+          </p>
+        </div>
         <div className="flex flex-col lg:flex-col xl:flex-row gap-14 items-center">
           <div className="flex-1">
             <ReactCompareSlider
@@ -115,63 +118,60 @@ export default function Retouching() {
             />
           </div>
 
-         
-            <div className="flex-1">
-              <ReactCompareSlider
-                itemOne={
-                  <ReactCompareSliderImage
-                    src="/retouching-2.jpg"
-                    srcSet="/retouching-2.jpg"
-                    alt="Before Retouching"
-                    className="w-auto h-full"
-                  />
-                }
-                itemTwo={
-                  <ReactCompareSliderImage
-                    src="/retouching-2-before.jpg"
-                    srcSet="/retouching-2-before.jpg"
-                    alt="After Retouching"
-                    className="w-auto h-full"
-                  />
-                }
-                position={50}
-                handle={
-                  <span className="react-compare-slider-handle">
-                    <ArrowLeftRightIcon className="h-14 w-14 text-muted p-2 rounded-4xl bg-muted/20 border-muted border-2 cursor-e-resize" />
-                  </span>
-                }
-              />
-            </div>
-            
-         
+          <div className="flex-1">
+            <ReactCompareSlider
+              itemOne={
+                <ReactCompareSliderImage
+                  src="/retouching-2.jpg"
+                  srcSet="/retouching-2.jpg"
+                  alt="Before Retouching"
+                  className="w-auto h-full"
+                />
+              }
+              itemTwo={
+                <ReactCompareSliderImage
+                  src="/retouching-2-before.jpg"
+                  srcSet="/retouching-2-before.jpg"
+                  alt="After Retouching"
+                  className="w-auto h-full"
+                />
+              }
+              position={50}
+              handle={
+                <span className="react-compare-slider-handle">
+                  <ArrowLeftRightIcon className="h-14 w-14 text-muted p-2 rounded-4xl bg-muted/20 border-muted border-2 cursor-e-resize" />
+                </span>
+              }
+            />
+          </div>
         </div>
 
         <div className="flex-1 mb-10">
-              <ReactCompareSlider
-                itemOne={
-                  <ReactCompareSliderImage
-                    src="/retouching-3.jpg"
-                    srcSet="/retouching-3.jpg"
-                    alt="Before Retouching"
-                    className="w-auto h-full"
-                  />
-                }
-                itemTwo={
-                  <ReactCompareSliderImage
-                    src="/retouching-3-before.jpg"
-                    srcSet="/retouching-3-before.jpg"
-                    alt="After Retouching"
-                    className="w-auto h-full"
-                  />
-                }
-                position={50}
-                handle={
-                  <span className="react-compare-slider-handle">
-                    <ArrowLeftRightIcon className="h-14 w-14 text-muted p-2 rounded-4xl bg-muted/20 border-muted border-2 cursor-e-resize" />
-                  </span>
-                }
+          <ReactCompareSlider
+            itemOne={
+              <ReactCompareSliderImage
+                src="/retouching-3.jpg"
+                srcSet="/retouching-3.jpg"
+                alt="Before Retouching"
+                className="w-auto h-full"
               />
-            </div>
+            }
+            itemTwo={
+              <ReactCompareSliderImage
+                src="/retouching-3-before.jpg"
+                srcSet="/retouching-3-before.jpg"
+                alt="After Retouching"
+                className="w-auto h-full"
+              />
+            }
+            position={50}
+            handle={
+              <span className="react-compare-slider-handle">
+                <ArrowLeftRightIcon className="h-14 w-14 text-muted p-2 rounded-4xl bg-muted/20 border-muted border-2 cursor-e-resize" />
+              </span>
+            }
+          />
+        </div>
       </div>
 
       <BackButton />

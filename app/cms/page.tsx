@@ -49,10 +49,7 @@ export default function ProjectPage() {
 
           <div className="space-y-20 text-base leading-relaxed">
             <p className="text-2xl font-bold leading-12">
-              This project involved building a modern, responsive company
-              website using a headless CMS. The goal was to enable easy content
-              management, SEO optimization, and scalability—while maintaining a
-              professional, uniform design.
+              {cmsProject.description}
             </p>
 
             <div className="space-y-4">
@@ -68,42 +65,7 @@ export default function ProjectPage() {
                   </strong>
                   Built-in SSR via Next.js ensures visibility in search engines.
                 </li>
-                <li className="text-muted-foreground">
-                  <strong className="text-foreground">
-                    Modern Tech Stack:{" "}
-                  </strong>
-                  Combines JAMstack principles with Next.js, Tailwind CSS,
-                  Sanity, and Vercel.
-                </li>
               </ol>
-            </div>
-
-            <div className="space-y-3">
-              <h2 className="text-2xl font-bold mb-1">Technology Stack</h2>
-
-              <h3 className="text-xl font-semibold mt-4">Next.js</h3>
-              <p className="text-muted-foreground">
-                Offers server-side rendering, structured content, and great
-                performance out-of-the-box.
-              </p>
-
-              <h3 className="text-xl font-semibold mt-4">Tailwind CSS</h3>
-              <p className="text-muted-foreground">
-                Enables a responsive and accessible UI using utility-first
-                styling.
-              </p>
-
-              <h3 className="text-xl font-semibold mt-4">Sanity CMS</h3>
-              <p className="text-muted-foreground">
-                Flexible and scalable content management, with real-time editing
-                and image support.
-              </p>
-
-              <h3 className="text-xl font-semibold mt-4">Vercel</h3>
-              <p className="text-muted-foreground">
-                Deployed on Vercel for optimal performance, CI/CD, and global
-                availability.
-              </p>
             </div>
           </div>
         </div>
