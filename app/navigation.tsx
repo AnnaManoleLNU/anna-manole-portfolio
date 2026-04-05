@@ -10,6 +10,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const links = [
+    { label: "E-mail", href: "mailto:manoleann@gmail.com", external: true },
     { label: "GitHub", href: "https://github.com/AnnaManoleLNU", external: true },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/anna-manole/", external: true },
     { label: "About", href: "/about", external: false },
