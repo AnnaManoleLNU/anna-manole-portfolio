@@ -14,8 +14,7 @@ export default function Home() {
       </h1>
 
       <p className="text-sm md:text-base lg:text-lg font-sans mt-2">
-        Currently based in Sweden, I have over 3 years of experience in full-stack web
-        development and graphic design such as logotypes, typography and retouching. Let’s work together!
+        Full-stack developer, with a background in graphic design. I specialize in UX and UI design as well as photography. Let’s work together!
       </p>
     </section>
       <Project />
